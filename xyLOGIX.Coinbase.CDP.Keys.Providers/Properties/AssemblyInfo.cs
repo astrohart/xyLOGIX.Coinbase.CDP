@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Foo")]
+[assembly: AssemblyTitle("xyLOGIX.Coinbase.CDP.Keys.Providers")]
 [assembly: AssemblyDescription("Provides objects and functionality to implement the loading and storing of a Coinbase CDP private key to and from a file on the disk.  This particular library holds the concrete classes and implementations of the component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]

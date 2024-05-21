@@ -10,7 +10,7 @@
 
 using System;
 
-namespace Foo.Interfaces.Properties
+namespace xyLOGIX.Coinbase.CDP.Keys.Providers.Factories.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -32,8 +32,8 @@ namespace Foo.Interfaces.Properties
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
 
         /// <summary>
-        /// Constructs a new instance of <see cref="T:Foo.Interfaces.Properties.Resources" /> and returns a reference to it.
-        /// </summary>		
+        /// Constructs a new instance of <see cref="T:xyLOGIX.Coinbase.CDP.Keys.Providers.Factories.Properties.Resources" /> and returns a reference to it.
+        /// </summary>				
         public Resources()
         {
         }
@@ -48,7 +48,7 @@ namespace Foo.Interfaces.Properties
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Foo.Interfaces.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("xyLOGIX.Coinbase.CDP.Keys.Providers.Factories.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

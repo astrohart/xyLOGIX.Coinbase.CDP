@@ -6,7 +6,7 @@
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{331D5532-CC03-4298-9E58-BF44EDD78E03}</ProjectGuid>
+    <ProjectGuid>{357C0F90-EF0C-411B-9819-DC9C545E6E5E}</ProjectGuid>
     <Deterministic>false</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -22,7 +22,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x64\Debug\Foo.Factories.xml</DocumentationFile>
+    <DocumentationFile>bin\x64\Debug\xyLOGIX.Coinbase.CDP.Keys.Providers.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -36,7 +36,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>True</SkipPostSharp>
-    <DocumentationFile>bin\x64\Release\Foo.Factories.xml</DocumentationFile>
+    <DocumentationFile>bin\x64\Release\xyLOGIX.Coinbase.CDP.Keys.Providers.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -50,7 +50,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Debug\Foo.Factories.xml</DocumentationFile>
+    <DocumentationFile>bin\x86\Debug\xyLOGIX.Coinbase.CDP.Keys.Providers.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -64,7 +64,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Release\Foo.Factories.xml</DocumentationFile>
+    <DocumentationFile>bin\x86\Release\xyLOGIX.Coinbase.CDP.Keys.Providers.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
@@ -74,10 +74,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>Foo.Factories</AssemblyName>
+    <AssemblyName>xyLOGIX.Coinbase.CDP.Keys.Providers</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>Foo.Factories</RootNamespace>
+    <RootNamespace>xyLOGIX.Coinbase.CDP.Keys.Providers</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">

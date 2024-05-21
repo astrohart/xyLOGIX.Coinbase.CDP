@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Foo.Factories")]
+[assembly: AssemblyTitle("xyLOGIX.Coinbase.CDP.Keys.Providers.Factories")]
 [assembly: AssemblyDescription("Provides objects and functionality to implement the loading and storing of a Coinbase CDP private key to and from a file on the disk.  This particular library holds the factories for this component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
