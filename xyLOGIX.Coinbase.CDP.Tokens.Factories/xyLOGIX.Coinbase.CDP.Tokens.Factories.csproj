@@ -120,6 +120,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetJwtTokenGenerator.cs" />
     <Compile Include="GlobalAspects.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,16 @@
     <None Include="app.config" />
     <None Include="key.snk" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Tokens.Interfaces\xyLOGIX.Coinbase.CDP.Tokens.Interfaces.csproj">
+      <Project>{B72A1921-9742-4172-BEDF-8B6646BDD1BF}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Tokens.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Tokens\xyLOGIX.Coinbase.CDP.Tokens.csproj">
+      <Project>{6FCD3AEE-9F76-4CAE-B0D8-B3E9B5F6AE64}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Tokens</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
