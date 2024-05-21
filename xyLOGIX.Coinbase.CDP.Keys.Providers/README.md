@@ -155,6 +155,11 @@ encrypted with a 512-bit RSA encryption algorithm.
 
 xyLOGIX.Coinbase.CDP.Keys.Providers
 
+##### Summary
+
+Defines the publicly-exposed events, methods and properties of a provider of
+`Coinbase CDP` private key information.
+
 <a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-CurrentPrivateKey'></a>
 ### CurrentPrivateKey `property`
 
