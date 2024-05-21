@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using PostSharp.Patterns.Diagnostics;
 using System;
-using xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces;
+using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 
-namespace xyLOGIX.Coinbase.CDP.Tokens.Models
+namespace xyLOGIX.Coinbase.CDP.Keys.Models
 {
     /// <summary>
     /// Encapsulates the <c>name</c> and <c>privateKey</c> fields of the JSON object
@@ -15,7 +15,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens.Models
         /// <summary>
         /// Initializes static data or performs actions that need to be performed once only
         /// for the
-        /// <see cref="T:xyLOGIX.Coinbase.CDP.Tokens.Models.CoinbaseJwtPrivateKey" />
+        /// <see cref="T:xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey" />
         /// class.
         /// </summary>
         /// <remarks>
@@ -27,7 +27,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens.Models
 
         /// <summary>
         /// Creates a new instance of
-        /// <see cref="T:xyLOGIX.Coinbase.CDP.Tokens.Models.CoinbaseJwtPrivateKey" /> and
+        /// <see cref="T:xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey" /> and
         /// returns a reference to it.
         /// </summary>
         [Log(AttributeExclude = true)]
@@ -54,4 +54,5 @@ namespace xyLOGIX.Coinbase.CDP.Tokens.Models
         [JsonProperty("privateKey")]
         public string PrivateKey { get; set; }
     }
+}    }
 }

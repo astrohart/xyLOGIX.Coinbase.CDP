@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xyLOGIX.Coinbase.CDP.Tokens.Models")]
-[assembly: AssemblyDescription("Provides objects and functionality to model the data that typically can be found in .json files distributed by the Coinbase Developer Platform (CDP) upon the generation of a CDP API key.  These files contain the name of the key and the .pem data for the user's private key.  This particular library holds the concrete classes and implementations of the component.")]
+[assembly: AssemblyTitle("xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces")]
+[assembly: AssemblyDescription("Provides objects and functionality to model the data that typically can be found in .json files distributed by the Coinbase Developer Platform (CDP) upon the generation of a CDP API key.  These files contain the name of the key and the .pem data for the user's private key.  This particular library holds the C# interfaces for this component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
 [assembly: AssemblyProduct("xyLOGIX Coinbase REST API Support")]
@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2b7d91c1-2a70-4b39-904b-ea5f9a3bfb1b")]
+[assembly: Guid("2bddf893-d20d-46bc-8250-28f243c443ea")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -37,3 +37,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+

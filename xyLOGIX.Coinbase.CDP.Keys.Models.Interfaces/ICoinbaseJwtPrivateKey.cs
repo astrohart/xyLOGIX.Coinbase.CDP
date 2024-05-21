@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces
+namespace xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces
 {
     /// <summary>
     /// Defines the publicly-exposed events, methods and properties of an object that
@@ -28,4 +28,5 @@ namespace xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces
         /// </summary>
         string PrivateKey { get; set; }
     }
+}
 }

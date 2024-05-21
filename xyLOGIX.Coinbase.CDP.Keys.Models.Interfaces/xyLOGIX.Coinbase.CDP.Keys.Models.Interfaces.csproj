@@ -6,7 +6,7 @@
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{374795AD-0145-4694-95B0-2C34EC732552}</ProjectGuid>
+    <ProjectGuid>{19E6CFBB-762D-4362-9F63-6788F7BC19BB}</ProjectGuid>
     <Deterministic>false</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -22,7 +22,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x64\Debug\xyLOGIX.Coinbase.CDP.Tokens.Models.xml</DocumentationFile>
+    <DocumentationFile>bin\x64\Debug\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -36,7 +36,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>True</SkipPostSharp>
-    <DocumentationFile>bin\x64\Release\xyLOGIX.Coinbase.CDP.Tokens.Models.xml</DocumentationFile>
+    <DocumentationFile>bin\x64\Release\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -50,7 +50,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Debug\xyLOGIX.Coinbase.CDP.Tokens.Models.xml</DocumentationFile>
+    <DocumentationFile>bin\x86\Debug\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -64,7 +64,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Release\xyLOGIX.Coinbase.CDP.Tokens.Models.xml</DocumentationFile>
+    <DocumentationFile>bin\x86\Release\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
@@ -74,10 +74,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Coinbase.CDP.Tokens.Models</AssemblyName>
+    <AssemblyName>xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Coinbase.CDP.Tokens.Models</RootNamespace>
+    <RootNamespace>xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -123,10 +123,10 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoinbaseJwtPrivateKey.cs" />
     <Compile Include="GlobalAspects.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICoinbaseJwtPrivateKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -147,12 +147,6 @@
     <None Include="app.config" />
     <None Include="key.snk" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces\xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces.csproj">
-      <Project>{19E6CFBB-762D-4362-9F63-6788F7BC19BB}</Project>
-      <Name>xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
