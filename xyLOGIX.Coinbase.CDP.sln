@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Coinbase.CDP.Tokens
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces", "xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces\xyLOGIX.Coinbase.CDP.Tokens.Models.Interfaces.csproj", "{19E6CFBB-762D-4362-9F63-6788F7BC19BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C6F31F0-6946-48D2-B256-F1EF849BC396}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
