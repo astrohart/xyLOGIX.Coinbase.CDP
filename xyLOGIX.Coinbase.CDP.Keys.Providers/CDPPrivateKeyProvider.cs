@@ -23,7 +23,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// Gets the fully-qualified pathname of the default configuration file.
         /// </summary>
         private readonly string SecretsFilePathname =
-            Resources.CoinbaseApiSecretFileLocation;
+            Resources.CoinbaseCdpSecretFileLocation;
 
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.

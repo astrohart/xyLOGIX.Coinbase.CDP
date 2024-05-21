@@ -61,11 +61,11 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Users\Brian Hart\AppData\Local\Coinbase\Config\.api_key.
+        ///   Looks up a localized string similar to C:\Users\Brian Hart\AppData\Local\Coinbase\Config\.cdp_key.
         /// </summary>
-        internal static string CoinbaseApiSecretFileLocation {
+        internal static string CoinbaseCdpSecretFileLocation {
             get {
-                return ResourceManager.GetString("CoinbaseApiSecretFileLocation", resourceCulture);
+                return ResourceManager.GetString("CoinbaseCdpSecretFileLocation", resourceCulture);
             }
         }
         

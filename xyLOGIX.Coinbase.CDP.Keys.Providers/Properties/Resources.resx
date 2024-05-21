@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CoinbaseApiSecretFileLocation" xml:space="preserve">
-    <value>C:\Users\Brian Hart\AppData\Local\Coinbase\Config\.api_key</value>
+  <data name="CoinbaseCdpSecretFileLocation" xml:space="preserve">
+    <value>C:\Users\Brian Hart\AppData\Local\Coinbase\Config\.cdp_key</value>
   </data>
   <data name="File_PrivateKeyPem" xml:space="preserve">
     <value>C:\Users\Brian Hart\source\repos\astrohart\private_key.pem</value>
