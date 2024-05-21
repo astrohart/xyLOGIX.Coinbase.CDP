@@ -123,6 +123,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetCDPPrivateKeyProvider.cs" />
     <Compile Include="GlobalAspects.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,12 @@
     <None Include="app.config" />
     <None Include="key.snk" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Providers\xyLOGIX.Coinbase.CDP.Keys.Providers.csproj">
+      <Project>{357C0F90-EF0C-411B-9819-DC9C545E6E5E}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Keys.Providers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

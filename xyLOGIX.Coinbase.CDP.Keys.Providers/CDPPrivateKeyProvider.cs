@@ -48,8 +48,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
-        /// <see
-        ///     cref="T:xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider" />
+        /// <see cref="T:xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider" />
         /// interface.
         /// </summary>
         public static ICDPPrivateKeyProvider Instance { get; } =

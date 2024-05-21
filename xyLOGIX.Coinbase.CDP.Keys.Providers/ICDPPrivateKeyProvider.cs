@@ -2,6 +2,10 @@
 
 namespace xyLOGIX.Coinbase.CDP.Keys.Providers
 {
+    /// <summary>
+    /// Defines the publicly-exposed events, methods and properties of a provider of
+    /// <c>Coinbase CDP</c> private key information.
+    /// </summary>
     public interface ICDPPrivateKeyProvider
     {
         /// <summary>
