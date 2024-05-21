@@ -1,5 +1,6 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Net.Http;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 using xyLOGIX.Coinbase.CDP.Tokens.Interfaces;
 using xyLOGIX.Core.Debug;
@@ -76,8 +77,14 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
             try
             {
                 if (key == null) return result;
+                if (string.IsNullOrWhiteSpace(method))
+                    return result;
+                if (string.IsNullOrWhiteSpace(path))
+                    return result;
 
-                result = GenerateFor(key.Name, key.PrivateKey);
+                result = GenerateFor(
+                    key.Name, key.PrivateKey, new HttpMethod(method), path
+                );
             }
             catch (Exception ex)
             {
@@ -137,7 +144,8 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
             {
                 if (string.IsNullOrWhiteSpace(name)) return result;
                 if (string.IsNullOrWhiteSpace(privateKey)) return result;
-                if (string.IsNullOrWhiteSpace(method)) return result;
+                if (method == null) return result;
+                if (string.IsNullOrWhiteSpace(method.Method)) return result;
                 if (string.IsNullOrWhiteSpace(path)) return result;
             }
             catch (Exception ex)
