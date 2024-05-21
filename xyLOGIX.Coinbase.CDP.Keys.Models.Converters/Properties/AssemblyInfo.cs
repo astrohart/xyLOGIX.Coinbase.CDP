@@ -4,17 +4,17 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xyLOGIX.Coinbase.CDP.Keys.Models.Factories")]
-[assembly: AssemblyDescription("Provides objects and functionality for ")]
+[assembly: AssemblyTitle("xyLOGIX.Coinbase.CDP.Keys.Models.Converters")]
+[assembly: AssemblyDescription("Provides objects and functionality to convert the model of a Coinbase CDP private key to and from JSON format.  This particular library holds the concrete classes and implementations of the component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Coinbase.CDP.Keys.Models.Factories")]
+[assembly: AssemblyProduct("xyLOGIX Coinbase REST API Support")]
 [assembly:
     AssemblyCopyright(
-        "Copyright � 2020-23 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2024 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
-        "This software is a component of xyLOGIX xyLOGIX.Coinbase.CDP.Keys.Models.Converters.  xyLOGIX.Coinbase.CDP.Keys.Models.Converters is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+        "This software is a component of xyLOGIX Coinbase REST API Support.  xyLOGIX Coinbase REST API Support is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("30d01fb1-90cb-4fe1-858a-b80763bbd105")]
+[assembly: Guid("2c6558ce-efb3-4139-a69d-6754e1a9c859")]
 
 // Version information for an assembly consists of the following four values:
 //

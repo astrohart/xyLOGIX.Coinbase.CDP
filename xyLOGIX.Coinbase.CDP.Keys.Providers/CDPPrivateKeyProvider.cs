@@ -6,6 +6,7 @@ using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 using xyLOGIX.Coinbase.CDP.Keys.Providers.Properties;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Files.Actions;
+using xyLOGIX.Files.Secure.Actions;
 using Read = xyLOGIX.Files.Secure.Actions.Read;
 
 namespace xyLOGIX.Coinbase.CDP.Keys.Providers
@@ -240,7 +241,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
             }
             catch
             {
-                result = MakeNewCoinbaseApiSecrets.FromScratch();
+                result = MakeNewCoinbaseJwtPrivateKey.FromScratch();
             }
 
             DebugUtils.WriteLine(
