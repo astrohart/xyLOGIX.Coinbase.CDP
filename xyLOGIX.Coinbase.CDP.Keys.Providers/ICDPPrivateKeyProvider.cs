@@ -45,7 +45,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// having the specified <paramref name="pathname" /> or having the default
         /// pathname (if none is provided).
         /// </summary>
-        /// <param name="secrets">
+        /// <param name="privateKeyData">
         /// (Optional.) Reference to an instance of an object that implements the
         /// <see cref="T:xyLOGIX.Coinbase.Tests.Config.Interfaces.ICoinbaseJwtPrivateKey" />
         /// interface that contains the secret information that is to be saved to a file
@@ -62,11 +62,11 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// value, then the default pathname is used.
         /// </param>
         /// <remarks>
-        /// The file to which the <paramref name="secrets" /> are saved is
+        /// The file to which the <paramref name="privateKeyData" /> are saved is
         /// encrypted with a 512-bit RSA encryption algorithm.
         /// </remarks>
         void Save(
-            ICoinbaseJwtPrivateKey secrets = default,
+            ICoinbaseJwtPrivateKey privateKeyData = default,
             string pathname = ""
         );
     }

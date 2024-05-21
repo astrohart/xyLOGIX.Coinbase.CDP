@@ -1,8 +1,10 @@
 ﻿using Alphaleonis.Win32.Filesystem;
 using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
+using xyLOGIX.Coinbase.CDP.Keys.Models.Converters;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Factories;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
+using xyLOGIX.Coinbase.CDP.Keys.Providers.Actions;
 using xyLOGIX.Coinbase.CDP.Keys.Providers.Properties;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Files.Actions;
@@ -169,6 +171,38 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
+                    "CDPPrivateKeyProvider.Load: Checking whether the contents of file '*******' are encrypted..."
+                );
+
+                if (!Check.WhetherDataIsEncrypted(fileBytes))
+                {
+                    DebugUtils.WriteLine(
+                        DebugLevel.Info,
+                        "CDPPrivateKeyProvider.Load: The data in the file '*******' is NOT encrypted.  Working with it as-is..."
+                    );
+
+                    var jsonContent = File.ReadAllText(filenameToUse);
+                    if (string.IsNullOrWhiteSpace(jsonContent)) return result;
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Info,
+                        $"CDPPrivateKeyProvider.Load: *** SUCCESS *** {jsonContent.Length} B of data were read from file '******'.  Deserializing it..."
+                    );
+
+                    result = ConvertCoinbaseJwtPrivateKey.FromJson(jsonContent);
+
+                    DebugUtils.WriteLine(
+                        result != null ? DebugLevel.Info : DebugLevel.Error,
+                        result != null
+                            ? "*** SUCCESS *** The private-key data has been deserialized successfully."
+                            : "*** ERROR *** FAILED to deserialize the private-key data."
+                    );
+
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
                     "CDPPrivateKeyProvider.Load: Attempting to obtain the user's RSA private key..."
                 );
 
@@ -233,11 +267,11 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"CDPPrivateKeyProvider.Load: *** SUCCESS *** {decryptedContent.Length} byte(s) of decrypted content obtained.  Deserializing it..."
+                    $"CDPPrivateKeyProvider.Load: *** SUCCESS *** {decryptedContent.Length} B of decrypted content were obtained.  Deserializing it..."
                 );
 
                 result = CurrentPrivateKey =
-                    ConvertCoinbaseApiSecrets.FromJson(decryptedContent);
+                    ConvertCoinbaseJwtPrivateKey.FromJson(decryptedContent);
             }
             catch
             {
@@ -257,7 +291,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// having the specified <paramref name="pathname" /> or having the default
         /// pathname (if none is provided).
         /// </summary>
-        /// <param name="secrets">
+        /// <param name="privateKeyData">
         /// (Optional.) Reference to an instance of an object that implements the
         /// <see cref="T:xyLOGIX.Coinbase.Tests.Config.Interfaces.ICoinbaseJwtPrivateKey" />
         /// interface that contains the secret information that is to be saved to a file
@@ -274,11 +308,11 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// value, then the default pathname is used.
         /// </param>
         /// <remarks>
-        /// The file to which the <paramref name="secrets" /> are saved is
+        /// The file to which the <paramref name="privateKeyData" /> are saved is
         /// encrypted with a 512-bit RSA encryption algorithm.
         /// </remarks>
         public void Save(
-            ICoinbaseJwtPrivateKey secrets = default,
+            ICoinbaseJwtPrivateKey privateKeyData = default,
             string pathname = ""
         )
         {
@@ -327,7 +361,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
                     "CDPPrivateKeyProvider.Save: Determining which data is to be saved..."
                 );
 
-                var dataToUse = secrets ?? CurrentPrivateKey;
+                var dataToUse = privateKeyData ?? CurrentPrivateKey;
 
                 DebugUtils.WriteLine(
                     DebugLevel.Debug,
@@ -416,7 +450,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
                     "CDPPrivateKeyProvider.Save: Converting the API secrets data to JSON format..."
                 );
 
-                var jsonData = ConvertCoinbaseApiSecrets.ToJson(dataToUse);
+                var jsonData = ConvertCoinbaseJwtPrivateKey.ToJson(dataToUse);
 
                 if (string.IsNullOrWhiteSpace(jsonData))
                 {
@@ -435,7 +469,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"CDPPrivateKeyProvider.Save: Attempting to read the user's RSA public key from the file '*****'..."
+                    "CDPPrivateKeyProvider.Save: Attempting to read the user's RSA public key from the file '*****'..."
                 );
                 var publicKey = Read.PublicKey(Resources.File_PublicKeyPem);
 

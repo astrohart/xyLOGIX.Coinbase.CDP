@@ -165,6 +165,10 @@
       <Project>{8eac08c9-b1ce-4163-a0c3-be0c7d33fa9c}</Project>
       <Name>xyLOGIX.Files.Secure.Actions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Converters\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.csproj">
+      <Project>{77219083-3B38-486B-A486-81ADCFB118BB}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Converters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Factories\xyLOGIX.Coinbase.CDP.Keys.Models.Factories.csproj">
       <Project>{56EBA3AE-B22E-4D6D-8B5D-740B81B20649}</Project>
       <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Factories</Name>
@@ -172,6 +176,10 @@
     <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.csproj">
       <Project>{19E6CFBB-762D-4362-9F63-6788F7BC19BB}</Project>
       <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions.csproj">
+      <Project>{F3116597-01F5-4396-B701-B26DC2B1378D}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Keys.Providers.Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

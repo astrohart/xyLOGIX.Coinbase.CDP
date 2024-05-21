@@ -52,6 +52,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Coinbase.CDP.Keys.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Coinbase.CDP.Keys.Models.Converters.Interfaces", "xyLOGIX.Coinbase.CDP.Keys.Models.Converters.Interfaces\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.Interfaces.csproj", "{1DF96B4C-92C8-4BEA-B428-C8F57A6F5395}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Coinbase.CDP.Keys.Providers.Actions", "xyLOGIX.Coinbase.CDP.Keys.Providers.Actions\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions.csproj", "{F3116597-01F5-4396-B701-B26DC2B1378D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Tests.Logging", "..\xyLOGIX.Tests.Logging.VS2019\xyLOGIX.Tests.Logging\xyLOGIX.Tests.Logging.csproj", "{52243153-1A0D-409A-91A8-638DBD7CF23F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -236,6 +240,22 @@ Global
 		{1DF96B4C-92C8-4BEA-B428-C8F57A6F5395}.Release|x64.Build.0 = Release|x64
 		{1DF96B4C-92C8-4BEA-B428-C8F57A6F5395}.Release|x86.ActiveCfg = Release|x86
 		{1DF96B4C-92C8-4BEA-B428-C8F57A6F5395}.Release|x86.Build.0 = Release|x86
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Debug|x64.ActiveCfg = Debug|x64
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Debug|x64.Build.0 = Debug|x64
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Debug|x86.ActiveCfg = Debug|x86
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Debug|x86.Build.0 = Debug|x86
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Release|x64.ActiveCfg = Release|x64
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Release|x64.Build.0 = Release|x64
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Release|x86.ActiveCfg = Release|x86
+		{F3116597-01F5-4396-B701-B26DC2B1378D}.Release|x86.Build.0 = Release|x86
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x64.ActiveCfg = Debug|x64
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x64.Build.0 = Debug|x64
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x86.ActiveCfg = Debug|x86
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Debug|x86.Build.0 = Debug|x86
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x64.ActiveCfg = Release|x64
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x64.Build.0 = Release|x64
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x86.ActiveCfg = Release|x86
+		{52243153-1A0D-409A-91A8-638DBD7CF23F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

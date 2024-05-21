@@ -6,7 +6,7 @@
     <ApplicationIcon>1382_cogs.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ProjectGuid>{77219083-3B38-486B-A486-81ADCFB118BB}</ProjectGuid>
+    <ProjectGuid>{F3116597-01F5-4396-B701-B26DC2B1378D}</ProjectGuid>
     <Deterministic>false</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -22,8 +22,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x64\Debug\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.xml</DocumentationFile>
-    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\x64\Debug\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1591;CS1587</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -36,8 +37,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>True</SkipPostSharp>
-    <DocumentationFile>bin\x64\Release\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.xml</DocumentationFile>
-    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\x64\Release\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1591;CS1587</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -50,8 +52,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Debug\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.xml</DocumentationFile>
-    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\x86\Debug\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1591;CS1587</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -64,8 +67,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <SkipPostSharp>False</SkipPostSharp>
-    <DocumentationFile>bin\x86\Release\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.xml</DocumentationFile>
-    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\x86\Release\xyLOGIX.Coinbase.CDP.Keys.Providers.Actions.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1591;CS1587</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -74,16 +78,10 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>xyLOGIX.Coinbase.CDP.Keys.Models.Converters</AssemblyName>
+    <AssemblyName>xyLOGIX.Coinbase.CDP.Keys.Providers.Actions</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>xyLOGIX.Coinbase.CDP.Keys.Models.Converters</RootNamespace>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>xyLOGIX.Coinbase.CDP.Keys.Providers.Actions</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
@@ -123,10 +121,21 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConvertCoinbaseJwtPrivateKey.cs" />
-    <Compile Include="GlobalAspects.cs" />
+    <ProjectReference Include="..\..\xyLOGIX.Core.Debug.VS2019\xyLOGIX.Core.Debug\xyLOGIX.Core.Debug.csproj">
+      <Project>{C445C052-26B6-4884-9A7B-25DC7ABC0DED}</Project>
+      <Name>xyLOGIX.Core.Debug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Converters\xyLOGIX.Coinbase.CDP.Keys.Models.Converters.csproj">
+      <Project>{77219083-3B38-486B-A486-81ADCFB118BB}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Converters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.csproj">
+      <Project>{19E6CFBB-762D-4362-9F63-6788F7BC19BB}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Check.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -136,31 +145,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1382_cogs.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
-    <None Include="key.snk" />
+    <Compile Include="GlobalAspects.cs" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\xyLOGIX.Core.Debug.VS2019\xyLOGIX.Core.Debug\xyLOGIX.Core.Debug.csproj">
-      <Project>{C445C052-26B6-4884-9A7B-25DC7ABC0DED}</Project>
-      <Name>xyLOGIX.Core.Debug</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.csproj">
-      <Project>{19e6cfbb-762d-4362-9f63-6788f7bc19bb}</Project>
-      <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models\xyLOGIX.Coinbase.CDP.Keys.Models.csproj">
-      <Project>{374795AD-0145-4694-95B0-2C34EC732552}</Project>
-      <Name>xyLOGIX.Coinbase.CDP.Keys.Models</Name>
-    </ProjectReference>
+    <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -215,16 +211,13 @@ GOTO FINALIZATION
 ECHO *** DONE *** with post-build script.
 SET ERRORLEVEL=0</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\Vsxmd.1.4.5\build\Vsxmd.targets" Condition="Exists('..\packages\Vsxmd.1.4.5\build\Vsxmd.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\PostSharp.2023.0.8\build\PostSharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.2023.0.8\build\PostSharp.props'))" />
     <Error Condition="!Exists('..\packages\PostSharp.2023.0.8\build\PostSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.2023.0.8\build\PostSharp.targets'))" />
-    <Error Condition="!Exists('..\packages\Vsxmd.1.4.5\build\Vsxmd.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Vsxmd.1.4.5\build\Vsxmd.targets'))" />
-    <Error Condition="!Exists('..\packages\StrongNamer.0.2.5\build\StrongNamer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StrongNamer.0.2.5\build\StrongNamer.targets'))" />
   </Target>
   <Import Project="..\packages\PostSharp.2023.0.8\build\PostSharp.targets" Condition="Exists('..\packages\PostSharp.2023.0.8\build\PostSharp.targets')" />
-  <Import Project="..\packages\Vsxmd.1.4.5\build\Vsxmd.targets" Condition="Exists('..\packages\Vsxmd.1.4.5\build\Vsxmd.targets')" />
-  <Import Project="..\packages\StrongNamer.0.2.5\build\StrongNamer.targets" Condition="Exists('..\packages\StrongNamer.0.2.5\build\StrongNamer.targets')" />
 </Project>
