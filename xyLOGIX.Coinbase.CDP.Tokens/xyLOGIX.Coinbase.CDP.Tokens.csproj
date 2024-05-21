@@ -146,6 +146,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\xyLOGIX.Core.Debug.VS2019\xyLOGIX.Core.Debug\xyLOGIX.Core.Debug.csproj">
+      <Project>{C445C052-26B6-4884-9A7B-25DC7ABC0DED}</Project>
+      <Name>xyLOGIX.Core.Debug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces\xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.csproj">
+      <Project>{19E6CFBB-762D-4362-9F63-6788F7BC19BB}</Project>
+      <Name>xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Coinbase.CDP.Tokens.Interfaces\xyLOGIX.Coinbase.CDP.Tokens.Interfaces.csproj">
       <Project>{B72A1921-9742-4172-BEDF-8B6646BDD1BF}</Project>
       <Name>xyLOGIX.Coinbase.CDP.Tokens.Interfaces</Name>
