@@ -98,6 +98,16 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
         /// (Required.) A <see cref="T:System.String" /> containing the name of the API
         /// user's private key.
         /// </param>
+        /// <param name="method">
+        /// (Required.) A <see cref="T:System.String" /> containing the HTTP method name,
+        /// e.g., <c>GET</c>, in all uppercase, that is being used for the particular REST
+        /// API call for which a JWT is desired.
+        /// </param>
+        /// <param name="path">
+        /// (Required.) A <see cref="T:System.String" /> containing the path, e.g.,
+        /// <c>/v2/accounts</c>, that is being used for the particular REST API call for
+        /// which a JWT is desired.
+        /// </param>
         /// <param name="privateKey">
         /// (Required.) A <see cref="T:System.String" /> containing the PEM-formatted
         /// private key of the API user.
@@ -116,7 +126,9 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
         [return: NotLogged]
         public string GenerateFor(
             [NotLogged] string name,
-            [NotLogged] string privateKey
+            [NotLogged] string privateKey,
+            HttpMethod method,
+            string path
         )
         {
             var result = string.Empty;
@@ -125,6 +137,8 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
             {
                 if (string.IsNullOrWhiteSpace(name)) return result;
                 if (string.IsNullOrWhiteSpace(privateKey)) return result;
+                if (string.IsNullOrWhiteSpace(method)) return result;
+                if (string.IsNullOrWhiteSpace(path)) return result;
             }
             catch (Exception ex)
             {
