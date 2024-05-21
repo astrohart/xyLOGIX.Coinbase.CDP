@@ -1,6 +1,15 @@
-﻿using PostSharp.Patterns.Diagnostics;
+﻿#pragma warning disable SYSLIB0023 // Disable the obsolete RNGCryptoServiceProvider warning
+
+using Jose;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.OpenSsl;
+using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
+using System.Security.Cryptography;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 using xyLOGIX.Coinbase.CDP.Tokens.Interfaces;
 using xyLOGIX.Core.Debug;
@@ -14,6 +23,23 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
     /// </summary>
     public class JwtTokenGenerator : IJwtTokenGenerator
     {
+        /// <summary>
+        /// A <see cref="T:System.String" /> that contains the name of the audit service.
+        /// </summary>
+        public const string RETAIL_REST_API_PROXY = "retail_rest_api_proxy";
+
+        /// <summary>
+        /// A <see cref="T:System.String" /> value that contains the hostname of the REST
+        /// API server.
+        /// </summary>
+        private const string REQUEST_HOST = "api.coinbase.com";
+
+        /// <summary>
+        /// Reference to an instance of <see cref="T:System.Random" /> that generates
+        /// random values for the <c>nonce</c>.
+        /// </summary>
+        private static readonly Random RNG = new Random();
+
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
@@ -138,6 +164,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
             string path
         )
         {
+            ECDsa privateKeyObject = default;
             var result = string.Empty;
 
             try
@@ -147,6 +174,136 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
                 if (method == null) return result;
                 if (string.IsNullOrWhiteSpace(method.Method)) return result;
                 if (string.IsNullOrWhiteSpace(path)) return result;
+
+                var modifiedSecret = privateKey.Replace("\\n", "\n");
+
+                if (string.IsNullOrWhiteSpace(modifiedSecret))
+                    return result;
+
+                using (var reader = new StringReader(modifiedSecret))
+                {
+                    var pemReader = new PemReader(reader);
+                    if (pemReader == null) return result;
+                    var keyPair =
+                        (AsymmetricCipherKeyPair)pemReader.ReadObject();
+                    if (keyPair == null) return result;
+
+                    var privateKeyParameters =
+                        (ECPrivateKeyParameters)keyPair.Private;
+                    if (privateKeyParameters == null) return result;
+
+                    var publicKeyParameters =
+                        (ECPublicKeyParameters)keyPair.Public;
+                    if (publicKeyParameters == null) return result;
+
+                    // Convert the private key 'D' value to a byte array
+                    var d = privateKeyParameters.D.ToByteArrayUnsigned();
+
+                    // Get the public key's elliptic curve point 'Q'
+                    var q = publicKeyParameters.Q;
+
+                    // Convert the X and Y coordinates of point 'Q' to byte arrays
+                    // These represent the public key components
+                    var x = q.AffineXCoord.GetEncoded();
+                    var y = q.AffineYCoord.GetEncoded();
+
+                    // Create a new ECDsa object with the specified ECParameters
+                    // The ECParameters include the curve details, private key 'D', and public key point 'Q'
+                    privateKeyObject = ECDsa.Create(
+                        new ECParameters
+                        {
+                            Curve =
+                                ECCurve.NamedCurves
+                                       .nistP256, // Specify the elliptic curve used
+                            D = d, // Set the private key component
+                            Q = new ECPoint
+                            {
+                                X = x, Y = y
+                            } // Set the public key components
+                        }
+                    );
+                }
+
+                if (privateKeyObject == null) return result;
+
+                var request_path = path != null && path.Contains("?")
+                    ? path.Substring(0, path.IndexOf('?'))
+                    : path;
+
+                var payload = new Dictionary<string, object>
+                {
+                    { "sub", name },
+                    { "iss", "coinbase-cloud" },
+                    { "nbf", DateTimeOffset.UtcNow.ToUnixTimeSeconds() },
+                    {
+                        "exp", DateTimeOffset.UtcNow.AddSeconds(15)
+                                             .ToUnixTimeSeconds()
+                    },
+                    { "aud", new[] { RETAIL_REST_API_PROXY } }
+                };
+
+                payload.Add(
+                    "uri",
+                    $"{method.Method.ToUpperInvariant()} {REQUEST_HOST}{request_path}"
+                );
+
+                var nonce = GenerateNonce(10);
+                if (string.IsNullOrWhiteSpace(nonce)) return result;
+
+                var extraHeaders = new Dictionary<string, object>
+                {
+                    { "kid", name }, { "nonce", nonce }, { "typ", "JWT" }
+                };
+
+                result = JWT.Encode(
+                    payload, privateKey, JwsAlgorithm.ES256, extraHeaders
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+            finally
+            {
+                privateKeyObject?.Dispose();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates a unique nonce value.
+        /// This method generates a 32-byte random value which is sufficiently large to
+        /// ensure uniqueness and security.
+        /// </summary>
+        /// <returns>A nonce value as a 64-character lowercase hexadecimal string.</returns>
+        private static string GenerateNonce(int digits)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (digits <= 0) return result;
+
+                var buffer = new byte[digits / 2];
+                RNG.NextBytes(buffer);
+
+                if (buffer == null) return result;
+                if (buffer.Length == 0) return result;
+
+                for (var i = 0; i < buffer.Length; i++)
+                {
+                    var item = buffer[i];
+                    result += item.ToString("X2");
+                }
+
+                if (digits % 2 == 0) return result;
+
+                result += RNG.Next(16 /* get a next random integer base 16 */)
+                             .ToString("X");
             }
             catch (Exception ex)
             {
@@ -156,6 +313,11 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
                 result = string.Empty;
             }
 
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"JwtTokenGenerator.GenerateNonce: Result = '{result}'"
+            );
+
             return result;
         }
 
@@ -163,3 +325,5 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
             => $"{method.ToUpper()} api.coinbase.com{path}";
     }
 }
+
+#pragma warning restore SYSLIB0023 // Restore the warning
