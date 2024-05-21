@@ -12,7 +12,7 @@ using xyLOGIX.Core.Extensions;
 namespace xyLOGIX.Coinbase.CDP.Keys
 {
     [ExplicitlySynchronized]
-    public static class ApiKeyAuthHelpers
+    public static class CoinbaseCDPKeyAuthHelpers
     {
         /// <summary>
         /// Initializes static data or performs actions that need to be performed once only
@@ -28,7 +28,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys
         /// attribute in order to simplify the logging output.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        static ApiKeyAuthHelpers() { }
+        static CoinbaseCDPKeyAuthHelpers() { }
 
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
@@ -83,6 +83,10 @@ namespace xyLOGIX.Coinbase.CDP.Keys
             try
             {
                 if (keyInfo == null) return result;
+                if (string.IsNullOrWhiteSpace(keyInfo.Name)) return result;
+                if (string.IsNullOrWhiteSpace(keyInfo.PrivateKey))
+                    return result;
+                
                 if (string.IsNullOrWhiteSpace(method)) return result;
                 if (method.AreAnyLettersLowercase()) return result;
                 if (string.IsNullOrWhiteSpace(url)) return result;
