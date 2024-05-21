@@ -32,6 +32,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Core.Extensions.Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Core.Assemblies.Info", "..\xyLOGIX.Core.Assemblies.Info.VS2019\xyLOGIX.Core.Assemblies.Info\xyLOGIX.Core.Assemblies.Info.csproj", "{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo", "Foo\Foo.csproj", "{357C0F90-EF0C-411B-9819-DC9C545E6E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo.Factories", "Foo.Factories\Foo.Factories.csproj", "{331D5532-CC03-4298-9E58-BF44EDD78E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo.Interfaces", "Foo.Interfaces\Foo.Interfaces.csproj", "{087E6746-512B-4501-AFAC-8436B0BC4733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -136,6 +142,30 @@ Global
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Release|x64.Build.0 = Release|x64
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Release|x86.ActiveCfg = Release|x86
 		{1611C59B-1C1E-4F7C-A1CC-7F263DD31188}.Release|x86.Build.0 = Release|x86
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Debug|x64.ActiveCfg = Debug|x64
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Debug|x64.Build.0 = Debug|x64
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Debug|x86.ActiveCfg = Debug|x86
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Debug|x86.Build.0 = Debug|x86
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Release|x64.ActiveCfg = Release|x64
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Release|x64.Build.0 = Release|x64
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Release|x86.ActiveCfg = Release|x86
+		{357C0F90-EF0C-411B-9819-DC9C545E6E5E}.Release|x86.Build.0 = Release|x86
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Debug|x64.ActiveCfg = Debug|x64
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Debug|x64.Build.0 = Debug|x64
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Debug|x86.ActiveCfg = Debug|x86
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Debug|x86.Build.0 = Debug|x86
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Release|x64.ActiveCfg = Release|x64
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Release|x64.Build.0 = Release|x64
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Release|x86.ActiveCfg = Release|x86
+		{331D5532-CC03-4298-9E58-BF44EDD78E03}.Release|x86.Build.0 = Release|x86
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Debug|x64.ActiveCfg = Debug|x64
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Debug|x64.Build.0 = Debug|x64
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Debug|x86.ActiveCfg = Debug|x86
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Debug|x86.Build.0 = Debug|x86
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Release|x64.ActiveCfg = Release|x64
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Release|x64.Build.0 = Release|x64
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Release|x86.ActiveCfg = Release|x86
+		{087E6746-512B-4501-AFAC-8436B0BC4733}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
