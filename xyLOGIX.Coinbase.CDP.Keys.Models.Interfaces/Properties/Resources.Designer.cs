@@ -73,5 +73,3 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.Properties
         }
     }
 }
-}
-}

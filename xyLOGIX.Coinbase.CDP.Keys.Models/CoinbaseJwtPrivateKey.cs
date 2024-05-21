@@ -54,5 +54,4 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models
         [JsonProperty("privateKey")]
         public string PrivateKey { get; set; }
     }
-}    }
-}
+}    

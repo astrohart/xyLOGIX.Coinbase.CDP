@@ -29,4 +29,3 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces
         string PrivateKey { get; set; }
     }
 }
-}
