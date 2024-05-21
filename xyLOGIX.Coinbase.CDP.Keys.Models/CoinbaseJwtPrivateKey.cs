@@ -53,5 +53,11 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models
         /// </summary>
         [JsonProperty("privateKey")]
         public string PrivateKey { get; set; }
+
+        /// <summary>Returns a string that represents the current object.</summary>
+        /// <returns>A string that represents the current object.</returns>
+        [Log(AttributeExclude = true)]
+        public override string ToString()
+            => "<Coinbase JWT Private Key>";
     }
-}    
+}
