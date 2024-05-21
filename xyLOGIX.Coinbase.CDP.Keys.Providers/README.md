@@ -16,7 +16,7 @@
   - [Load(pathname)](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-Load-System-String- 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider.Load(System.String)')
   - [Save(privateKeyData,pathname)](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-Save-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey,System-String- 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider.Save(xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey,System.String)')
 - [Resources](#T-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources')
-  - [CoinbaseApiSecretFileLocation](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-CoinbaseApiSecretFileLocation 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources.CoinbaseApiSecretFileLocation')
+  - [CoinbaseCdpSecretFileLocation](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-CoinbaseCdpSecretFileLocation 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources.CoinbaseCdpSecretFileLocation')
   - [Culture](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-Culture 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources.Culture')
   - [File_PrivateKeyPem](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-File_PrivateKeyPem 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources.File_PrivateKeyPem')
   - [File_PublicKeyPem](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-File_PublicKeyPem 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources.File_PublicKeyPem')
@@ -248,12 +248,12 @@ xyLOGIX.Coinbase.CDP.Keys.Providers.Properties
 
 A strongly-typed resource class, for looking up localized strings, etc.
 
-<a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-CoinbaseApiSecretFileLocation'></a>
-### CoinbaseApiSecretFileLocation `property`
+<a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-CoinbaseCdpSecretFileLocation'></a>
+### CoinbaseCdpSecretFileLocation `property`
 
 ##### Summary
 
-Looks up a localized string similar to C:\Users\Brian Hart\AppData\Local\Coinbase\Config\.api_key.
+Looks up a localized string similar to C:\Users\Brian Hart\AppData\Local\Coinbase\Config\.cdp_key.
 
 <a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources-Culture'></a>
 ### Culture `property`
