@@ -6,7 +6,7 @@
 - [ICoinbaseJwtPrivateKey](#T-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey')
   - [KeyId](#P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey-KeyId 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey.KeyId')
   - [Name](#P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey-Name 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey.Name')
-  - [PrivateKey](#P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey-PrivateKey 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey.PrivateKey')
+  - [PrivateKeyPem](#P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey-PrivateKeyPem 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey.PrivateKeyPem')
 - [Resources](#T-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-Properties-Resources 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.Properties.Resources')
   - [Culture](#P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-Properties-Resources-Culture 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-Properties-Resources-ResourceManager 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.Properties.Resources.ResourceManager')
@@ -41,8 +41,8 @@ object from another.
 Gets or sets a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the name of the JWT
 private key.
 
-<a name='P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey-PrivateKey'></a>
-### PrivateKey `property`
+<a name='P-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey-PrivateKeyPem'></a>
+### PrivateKeyPem `property`
 
 ##### Summary
 
