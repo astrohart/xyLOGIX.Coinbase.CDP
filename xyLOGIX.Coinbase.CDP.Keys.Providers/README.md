@@ -5,14 +5,15 @@
 
 - [CDPPrivateKeyProvider](#T-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider')
   - [#ctor()](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-#ctor 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.#ctor')
-  - [SecretsFilePathname](#F-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-SecretsFilePathname 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.SecretsFilePathname')
   - [CurrentPrivateKey](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-CurrentPrivateKey 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.CurrentPrivateKey')
   - [Instance](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-Instance 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.Instance')
+  - [SecretsFilePathname](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-SecretsFilePathname 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.SecretsFilePathname')
   - [#cctor()](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-#cctor 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.#cctor')
   - [Load(pathname)](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-Load-System-String- 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.Load(System.String)')
   - [Save(privateKeyData,pathname)](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-Save-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey,System-String- 'xyLOGIX.Coinbase.CDP.Keys.Providers.CDPPrivateKeyProvider.Save(xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey,System.String)')
 - [ICDPPrivateKeyProvider](#T-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider')
   - [CurrentPrivateKey](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-CurrentPrivateKey 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider.CurrentPrivateKey')
+  - [SecretsFilePathname](#P-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-SecretsFilePathname 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider.SecretsFilePathname')
   - [Load(pathname)](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-Load-System-String- 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider.Load(System.String)')
   - [Save(privateKeyData,pathname)](#M-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-Save-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey,System-String- 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider.Save(xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey,System.String)')
 - [Resources](#T-xyLOGIX-Coinbase-CDP-Keys-Providers-Properties-Resources 'xyLOGIX.Coinbase.CDP.Keys.Providers.Properties.Resources')
@@ -44,13 +45,6 @@ Empty, protected constructor to prohibit direct allocation of this class.
 
 This constructor has no parameters.
 
-<a name='F-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-SecretsFilePathname'></a>
-### SecretsFilePathname `constants`
-
-##### Summary
-
-Gets the fully-qualified pathname of the default configuration file.
-
 <a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-CurrentPrivateKey'></a>
 ### CurrentPrivateKey `property`
 
@@ -69,6 +63,13 @@ represents the currently-loaded private key.
 Gets a reference to the one and only instance of the object that implements the
 [ICDPPrivateKeyProvider](#T-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider 'xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider')
 interface.
+
+<a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-SecretsFilePathname'></a>
+### SecretsFilePathname `property`
+
+##### Summary
+
+Gets the fully-qualified pathname of the default configuration file.
 
 <a name='M-xyLOGIX-Coinbase-CDP-Keys-Providers-CDPPrivateKeyProvider-#cctor'></a>
 ### #cctor() `method`
@@ -169,6 +170,13 @@ Gets or sets a reference to the instance of an object implementing the
 [ICoinbaseJwtPrivateKey](#T-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey 'xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey')
 interface that
 represents the currently-loaded private key.
+
+<a name='P-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-SecretsFilePathname'></a>
+### SecretsFilePathname `property`
+
+##### Summary
+
+Gets the fully-qualified pathname of the default configuration file.
 
 <a name='M-xyLOGIX-Coinbase-CDP-Keys-Providers-ICDPPrivateKeyProvider-Load-System-String-'></a>
 ### Load(pathname) `method`
