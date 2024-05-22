@@ -26,6 +26,6 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces
         /// Gets or sets a <see cref="T:System.String" /> that contains the private key --
         /// in PEM format.
         /// </summary>
-        string PrivateKey { get; set; }
+        string PrivateKeyPem { get; set; }
     }
 }

@@ -60,7 +60,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models.Factories
             if (self == null)
                 throw new ArgumentNullException(nameof(self));
 
-            self.PrivateKey = pem;
+            self.PrivateKeyPem = pem;
             return self;
         }
 

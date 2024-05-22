@@ -109,7 +109,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
                     return result;
 
                 result = GenerateFor(
-                    key.Name, key.PrivateKey, new HttpMethod(method), path
+                    key.Name, key.PrivateKeyPem, new HttpMethod(method), path
                 );
             }
             catch (Exception ex)

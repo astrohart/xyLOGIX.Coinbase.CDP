@@ -84,7 +84,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys
             {
                 if (keyInfo == null) return result;
                 if (string.IsNullOrWhiteSpace(keyInfo.Name)) return result;
-                if (string.IsNullOrWhiteSpace(keyInfo.PrivateKey))
+                if (string.IsNullOrWhiteSpace(keyInfo.PrivateKeyPem))
                     return result;
                 
                 if (string.IsNullOrWhiteSpace(method)) return result;

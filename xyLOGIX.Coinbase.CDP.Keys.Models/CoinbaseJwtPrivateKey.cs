@@ -52,7 +52,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models
         /// in PEM format.
         /// </summary>
         [JsonProperty("privateKey")]
-        public string PrivateKey { get; set; }
+        public string PrivateKeyPem { get; set; }
 
         /// <summary>Returns a string that represents the current object.</summary>
         /// <returns>A string that represents the current object.</returns>
