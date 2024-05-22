@@ -7,7 +7,7 @@
   - [#ctor()](#M-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-#ctor 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.#ctor')
   - [KeyId](#P-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-KeyId 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.KeyId')
   - [Name](#P-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-Name 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.Name')
-  - [PrivateKey](#P-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-PrivateKey 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.PrivateKey')
+  - [PrivateKeyPem](#P-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-PrivateKeyPem 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.PrivateKeyPem')
   - [#cctor()](#M-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-#cctor 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.#cctor')
   - [ToString()](#M-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-ToString 'xyLOGIX.Coinbase.CDP.Keys.Models.CoinbaseJwtPrivateKey.ToString')
 - [Resources](#T-xyLOGIX-Coinbase-CDP-Keys-Models-Properties-Resources 'xyLOGIX.Coinbase.CDP.Keys.Models.Properties.Resources')
@@ -56,8 +56,8 @@ object from another.
 Gets or sets a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the name of the JWT
 private key.
 
-<a name='P-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-PrivateKey'></a>
-### PrivateKey `property`
+<a name='P-xyLOGIX-Coinbase-CDP-Keys-Models-CoinbaseJwtPrivateKey-PrivateKeyPem'></a>
+### PrivateKeyPem `property`
 
 ##### Summary
 
