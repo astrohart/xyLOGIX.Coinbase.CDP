@@ -18,6 +18,11 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         ICoinbaseJwtPrivateKey CurrentPrivateKey { get; set; }
 
         /// <summary>
+        /// Gets the fully-qualified pathname of the default configuration file.
+        /// </summary>
+        string SecretsFilePathname { get; }
+
+        /// <summary>
         /// Loads the configuration from the default configuration file, and stores the
         /// result in the values of the
         /// <see

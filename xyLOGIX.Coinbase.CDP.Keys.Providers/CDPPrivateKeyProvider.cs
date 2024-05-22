@@ -20,12 +20,6 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
     public class CDPPrivateKeyProvider : ICDPPrivateKeyProvider
     {
         /// <summary>
-        /// Gets the fully-qualified pathname of the default configuration file.
-        /// </summary>
-        private readonly string SecretsFilePathname =
-            Resources.CoinbaseCdpSecretFileLocation;
-
-        /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
@@ -53,6 +47,12 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// </summary>
         public static ICDPPrivateKeyProvider Instance { get; } =
             new CDPPrivateKeyProvider();
+
+        /// <summary>
+        /// Gets the fully-qualified pathname of the default configuration file.
+        /// </summary>
+        public string SecretsFilePathname { get; } =
+            Resources.CoinbaseCdpSecretFileLocation;
 
         /// <summary>
         /// Loads the configuration from the default configuration file, and stores the
