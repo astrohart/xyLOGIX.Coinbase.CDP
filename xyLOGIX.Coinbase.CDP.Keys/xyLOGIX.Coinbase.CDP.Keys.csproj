@@ -162,10 +162,6 @@
       <Project>{5528D7FB-B88B-4E9D-9BBD-B6B6B893666A}</Project>
       <Name>xyLOGIX.Core.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\xyLOGIX.Coinbase.VS2019\xyLOGIX.Coinbase.Models\xyLOGIX.Coinbase.Models.csproj">
-      <Project>{D755D4E2-AAF3-4C6D-A7FF-8E940259F1D5}</Project>
-      <Name>xyLOGIX.Coinbase.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoinbaseCDPKeyAuthHelpers.cs" />
