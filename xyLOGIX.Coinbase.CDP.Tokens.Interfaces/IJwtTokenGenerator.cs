@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System.Net.Http;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 
@@ -9,6 +10,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens.Interfaces
     /// generates <c>JSON Web Tokens</c> for use on the <c>Coinbase (Retail)</c> or
     /// <c>Coinbase (Advanced Trade)</c> trading platform(s).
     /// </summary>
+    [Synchronized]
     public interface IJwtTokenGenerator
     {
         /// <summary>

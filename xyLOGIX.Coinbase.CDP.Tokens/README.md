@@ -7,9 +7,12 @@
   - [#ctor()](#M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-#ctor 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.#ctor')
   - [REQUEST_HOST](#F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-REQUEST_HOST 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.REQUEST_HOST')
   - [RETAIL_REST_API_PROXY](#F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-RETAIL_REST_API_PROXY 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.RETAIL_REST_API_PROXY')
-  - [RNG](#F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-RNG 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.RNG')
+  - [_rng](#F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-_rng 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator._rng')
+  - [_validHttpMethods](#F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-_validHttpMethods 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator._validHttpMethods')
   - [Instance](#P-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-Instance 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.Instance')
+  - [ValidHttpMethods](#P-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-ValidHttpMethods 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.ValidHttpMethods')
   - [#cctor()](#M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-#cctor 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.#cctor')
+  - [FormatJwtUri(method,path)](#M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-FormatJwtUri-System-String,System-String- 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.FormatJwtUri(System.String,System.String)')
   - [GenerateFor(key,method,path)](#M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-GenerateFor-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey,System-String,System-String- 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.GenerateFor(xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces.ICoinbaseJwtPrivateKey,System.String,System.String)')
   - [GenerateFor(name,method,path,privateKey)](#M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-GenerateFor-System-String,System-String,System-Net-Http-HttpMethod,System-String- 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.GenerateFor(System.String,System.String,System.Net.Http.HttpMethod,System.String)')
   - [GenerateNonce()](#M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-GenerateNonce-System-Int32- 'xyLOGIX.Coinbase.CDP.Tokens.JwtTokenGenerator.GenerateNonce(System.Int32)')
@@ -56,13 +59,20 @@ API server.
 
 A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the name of the audit service.
 
-<a name='F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-RNG'></a>
-### RNG `constants`
+<a name='F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-_rng'></a>
+### _rng `constants`
 
 ##### Summary
 
 Reference to an instance of [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') that generates
 random values for the `nonce`.
+
+<a name='F-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-_validHttpMethods'></a>
+### _validHttpMethods `constants`
+
+##### Summary
+
+A static readonly HashSet that contains valid HTTP methods.
 
 <a name='P-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-Instance'></a>
 ### Instance `property`
@@ -72,6 +82,13 @@ random values for the `nonce`.
 Gets a reference to the one and only instance of the object that implements the
 [IJwtTokenGenerator](#T-xyLOGIX-Coinbase-CDP-Tokens-Interfaces-IJwtTokenGenerator 'xyLOGIX.Coinbase.CDP.Tokens.Interfaces.IJwtTokenGenerator')
 interface.
+
+<a name='P-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-ValidHttpMethods'></a>
+### ValidHttpMethods `property`
+
+##### Summary
+
+Gets the valid HTTP methods.
 
 <a name='M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-#cctor'></a>
 ### #cctor() `method`
@@ -83,6 +100,29 @@ Empty, static constructor to prohibit direct allocation of this class.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-FormatJwtUri-System-String,System-String-'></a>
+### FormatJwtUri(method,path) `method`
+
+##### Summary
+
+Formats a URI for use with a JSON web token value, given the specified HTTP
+`method` and `path`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') is returned containing
+the properly-formatted URI; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| method | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the representation of the HTTP method, such as `GET`, `POST`, etc.
+being used. |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The path and query of the Coinbase API request. |
 
 <a name='M-xyLOGIX-Coinbase-CDP-Tokens-JwtTokenGenerator-GenerateFor-xyLOGIX-Coinbase-CDP-Keys-Models-Interfaces-ICoinbaseJwtPrivateKey,System-String,System-String-'></a>
 ### GenerateFor(key,method,path) `method`
@@ -161,12 +201,12 @@ valid information, then this method returns the
 ##### Summary
 
 Generates a unique nonce value.
-This method generates a 32-byte random value which is sufficiently large to
+This method generates a random value which is sufficiently large to
 ensure uniqueness and security.
 
 ##### Returns
 
-A nonce value as a 64-character lowercase hexadecimal string.
+A nonce value as a hexadecimal string.
 
 ##### Parameters
 

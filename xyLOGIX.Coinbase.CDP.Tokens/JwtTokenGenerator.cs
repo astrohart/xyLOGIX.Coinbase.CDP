@@ -5,6 +5,7 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,7 @@ using System.Net.Http;
 using System.Security.Cryptography;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 using xyLOGIX.Coinbase.CDP.Tokens.Interfaces;
+using xyLOGIX.Collections.Synchronized;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Coinbase.CDP.Tokens
@@ -21,6 +23,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
     /// <c>Coinbase (Retail)</c> or the <c>Coinbase (Advanced Trade)</c> trading
     /// platform(s).
     /// </summary>
+    [Synchronized]
     public class JwtTokenGenerator : IJwtTokenGenerator
     {
         /// <summary>
@@ -38,13 +41,32 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
         /// Reference to an instance of <see cref="T:System.Random" /> that generates
         /// random values for the <c>nonce</c>.
         /// </summary>
-        private static readonly Random RNG = new Random();
+        private static readonly RandomNumberGenerator _rng;
+
+        /// <summary>
+        /// A static readonly HashSet that contains valid HTTP methods.
+        /// </summary>
+        private static readonly ConcurrentList<string> _validHttpMethods;
 
         /// <summary>
         /// Empty, static constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        static JwtTokenGenerator() { }
+        static JwtTokenGenerator()
+        {
+            _rng = RandomNumberGenerator.Create();
+
+            _validHttpMethods = new ConcurrentList<string>
+            {
+                HttpMethod.Get.Method,
+                HttpMethod.Post.Method,
+                HttpMethod.Put.Method,
+                HttpMethod.Delete.Method,
+                HttpMethod.Head.Method,
+                HttpMethod.Options.Method,
+                HttpMethod.Trace.Method
+            };
+        }
 
         /// <summary>
         /// Empty, protected constructor to prohibit direct allocation of this class.
@@ -59,6 +81,12 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
         /// </summary>
         public static IJwtTokenGenerator Instance { get; } =
             new JwtTokenGenerator();
+
+        /// <summary>
+        /// Gets the valid HTTP methods.
+        /// </summary>
+        private static ConcurrentList<string> ValidHttpMethods
+            => _validHttpMethods;
 
         /// <summary>
         /// Attempts to generate a <c>JSON Web Token (JWT)</c> for use on the
@@ -276,10 +304,11 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
 
         /// <summary>
         /// Generates a unique nonce value.
-        /// This method generates a 32-byte random value which is sufficiently large to
+        /// This method generates a random value which is sufficiently large to
         /// ensure uniqueness and security.
         /// </summary>
-        /// <returns>A nonce value as a 64-character lowercase hexadecimal string.</returns>
+        /// <returns>A nonce value as a hexadecimal string.</returns>
+        [EntryPoint]
         private static string GenerateNonce(int digits)
         {
             var result = string.Empty;
@@ -289,7 +318,9 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
                 if (digits <= 0) return result;
 
                 var buffer = new byte[digits / 2];
-                RNG.NextBytes(buffer);
+                _rng.GetBytes(
+                    buffer
+                ); // This will fill the buffer with random bytes
 
                 if (buffer == null) return result;
                 if (buffer.Length == 0) return result;
@@ -302,8 +333,10 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
 
                 if (digits % 2 == 0) return result;
 
-                result += RNG.Next(16 /* get a next random integer base 16 */)
-                             .ToString("X");
+                var extraBuffer = new byte[1];
+                _rng.GetBytes(extraBuffer);
+                result += extraBuffer[0]
+                    .ToString("X");
             }
             catch (Exception ex)
             {
@@ -321,8 +354,45 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
             return result;
         }
 
+        /// <summary>
+        /// Formats a URI for use with a JSON web token value, given the specified HTTP
+        /// <paramref name="method" /> and <paramref name="path" />.
+        /// </summary>
+        /// <param name="method">
+        /// (Required.) a <see cref="T:System.String" /> that contains
+        /// the representation of the HTTP method, such as <c>GET</c>, <c>POST</c>, etc.
+        /// being used.
+        /// </param>
+        /// <param name="path">(Required.) The path and query of the Coinbase API request.</param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> is returned containing
+        /// the properly-formatted URI; otherwise, the <see cref="F:System.String.Empty" />
+        /// value is returned.
+        /// </returns>
         private string FormatJwtUri(string method, string path)
-            => $"{method.ToUpper()} api.coinbase.com{path}";
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(method)) return result;
+                if (string.IsNullOrWhiteSpace(path)) return result;
+
+                // Check that the 'method' is a valid HTTP method
+                if (!ValidHttpMethods.Contains(method)) return result;
+
+                result = $"{method.ToUpper()} {REQUEST_HOST}{path}";
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
     }
 }
 
