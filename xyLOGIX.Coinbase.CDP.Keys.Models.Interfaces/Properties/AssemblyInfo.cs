@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Coinbase REST API Support")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2024 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2019-24 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
         "This software is a component of xyLOGIX Coinbase REST API Support.  xyLOGIX Coinbase REST API Support is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
