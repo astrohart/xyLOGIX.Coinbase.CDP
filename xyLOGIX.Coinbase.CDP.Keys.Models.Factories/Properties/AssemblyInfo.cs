@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Coinbase.CDP.Keys.Models.Factories")]
 [assembly:
     AssemblyCopyright(
-        "Copyright � 2020-23 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2020-23 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
         "This software is a component of xyLOGIX xyLOGIX.Coinbase.CDP.Keys.Models.Converters.  xyLOGIX.Coinbase.CDP.Keys.Models.Converters is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
