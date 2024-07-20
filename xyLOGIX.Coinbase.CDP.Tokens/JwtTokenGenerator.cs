@@ -1,4 +1,4 @@
-﻿#pragma warning disable SYSLIB0023 // Disable the obsolete RNGCryptoServiceProvider warning
+#pragma warning disable SYSLIB0023 // Disable the obsolete RNGCryptoServiceProvider warning
 
 using Jose;
 using Org.BouncyCastle.Crypto;

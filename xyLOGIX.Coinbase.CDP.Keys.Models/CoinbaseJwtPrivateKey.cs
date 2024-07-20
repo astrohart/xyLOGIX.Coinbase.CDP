@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;

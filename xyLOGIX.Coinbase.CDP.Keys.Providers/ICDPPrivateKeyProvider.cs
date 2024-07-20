@@ -1,4 +1,4 @@
-﻿using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
+using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 
 namespace xyLOGIX.Coinbase.CDP.Keys.Providers
 {

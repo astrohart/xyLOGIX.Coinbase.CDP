@@ -1,4 +1,4 @@
-﻿using Alphaleonis.Win32.Filesystem;
+using Alphaleonis.Win32.Filesystem;
 using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Converters;
