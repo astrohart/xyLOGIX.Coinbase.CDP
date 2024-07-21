@@ -1,3 +1,4 @@
+using System.Diagnostics;
 #pragma warning disable SYSLIB0023 // Disable the obsolete RNGCryptoServiceProvider warning
 
 using Jose;
