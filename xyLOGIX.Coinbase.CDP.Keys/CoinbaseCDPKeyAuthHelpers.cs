@@ -35,7 +35,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys
         /// <see cref="T:xyLOGIX.Coinbase.CDP.Tokens.Interfaces.IJwtTokenGenerator" />
         /// interface.
         /// </summary>
-        private static IJwtTokenGenerator JwtTokenGenerator { get; } =
+        private static IJwtTokenGenerator JwtTokenGenerator { [DebuggerStepThrough] get; } =
             GetJwtTokenGenerator.SoleInstance();
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace xyLOGIX.Coinbase.CDP.Keys
         /// <see cref="T:xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider" />
         /// interface.
         /// </summary>
-        private static ICDPPrivateKeyProvider PrivateKeyProvider { get; } =
+        private static ICDPPrivateKeyProvider PrivateKeyProvider { [DebuggerStepThrough] get; } =
             GetCDPPrivateKeyProvider.SoleInstance();
 
         /// <summary>

@@ -38,20 +38,20 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// interface that
         /// represents the currently-loaded private key.
         /// </summary>
-        public ICoinbaseJwtPrivateKey CurrentPrivateKey { get; set; }
+        public ICoinbaseJwtPrivateKey CurrentPrivateKey { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
         /// <see cref="T:xyLOGIX.Coinbase.CDP.Keys.Providers.ICDPPrivateKeyProvider" />
         /// interface.
         /// </summary>
-        public static ICDPPrivateKeyProvider Instance { get; } =
+        public static ICDPPrivateKeyProvider Instance { [DebuggerStepThrough] get; } =
             new CDPPrivateKeyProvider();
 
         /// <summary>
         /// Gets the fully-qualified pathname of the default configuration file.
         /// </summary>
-        public string SecretsFilePathname { get; } =
+        public string SecretsFilePathname { [DebuggerStepThrough] get; } =
             Resources.CoinbaseCdpSecretFileLocation;
 
         /// <summary>

@@ -15,12 +15,12 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         /// interface that
         /// represents the currently-loaded private key.
         /// </summary>
-        ICoinbaseJwtPrivateKey CurrentPrivateKey { get; set; }
+        ICoinbaseJwtPrivateKey CurrentPrivateKey { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the fully-qualified pathname of the default configuration file.
         /// </summary>
-        string SecretsFilePathname { get; }
+        string SecretsFilePathname { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Loads the configuration from the default configuration file, and stores the

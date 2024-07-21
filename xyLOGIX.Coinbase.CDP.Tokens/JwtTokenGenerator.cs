@@ -79,7 +79,7 @@ namespace xyLOGIX.Coinbase.CDP.Tokens
         /// <see cref="T:xyLOGIX.Coinbase.CDP.Tokens.Interfaces.IJwtTokenGenerator" />
         /// interface.
         /// </summary>
-        public static IJwtTokenGenerator Instance { get; } =
+        public static IJwtTokenGenerator Instance { [DebuggerStepThrough] get; } =
             new JwtTokenGenerator();
 
         /// <summary>

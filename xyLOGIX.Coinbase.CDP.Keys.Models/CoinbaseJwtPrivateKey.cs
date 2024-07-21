@@ -38,21 +38,21 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models
         /// object from another.
         /// </summary>
         [JsonIgnore]
-        public Guid KeyId { get; } = Guid.NewGuid();
+        public Guid KeyId { [DebuggerStepThrough] get; } = Guid.NewGuid();
 
         /// <summary>
         /// Gets or sets a <see cref="T:System.String" /> that contains the name of the JWT
         /// private key.
         /// </summary>
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a <see cref="T:System.String" /> that contains the private key --
         /// in PEM format.
         /// </summary>
         [JsonProperty("privateKey")]
-        public string PrivateKeyPem { get; set; }
+        public string PrivateKeyPem { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>Returns a string that represents the current object.</summary>
         /// <returns>A string that represents the current object.</returns>

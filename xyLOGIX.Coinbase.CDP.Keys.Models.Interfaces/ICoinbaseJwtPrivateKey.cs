@@ -14,18 +14,18 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces
         /// Gets a <see cref="T:System.Guid" /> that distinguishes one instance of this
         /// object from another.
         /// </summary>
-        Guid KeyId { get; }
+        Guid KeyId { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a <see cref="T:System.String" /> that contains the name of the JWT
         /// private key.
         /// </summary>
-        string Name { get; set; }
+        string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a <see cref="T:System.String" /> that contains the private key --
         /// in PEM format.
         /// </summary>
-        string PrivateKeyPem { get; set; }
+        string PrivateKeyPem { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
     }
 }
