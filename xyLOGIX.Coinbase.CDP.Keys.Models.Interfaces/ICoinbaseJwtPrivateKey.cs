@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System;
 
 namespace xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces
