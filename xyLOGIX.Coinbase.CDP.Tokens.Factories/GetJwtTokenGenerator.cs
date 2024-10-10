@@ -1,4 +1,4 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using xyLOGIX.Coinbase.CDP.Tokens.Interfaces;
 
 namespace xyLOGIX.Coinbase.CDP.Tokens.Factories

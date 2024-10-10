@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
 
 namespace xyLOGIX.Coinbase.CDP.Keys.Providers

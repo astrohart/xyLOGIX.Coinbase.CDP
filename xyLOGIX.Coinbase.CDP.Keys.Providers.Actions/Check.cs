@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Converters;
 using xyLOGIX.Core.Debug;

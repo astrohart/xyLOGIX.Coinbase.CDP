@@ -1,4 +1,4 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System.Net.Http;
 using xyLOGIX.Coinbase.CDP.Keys.Models.Interfaces;
