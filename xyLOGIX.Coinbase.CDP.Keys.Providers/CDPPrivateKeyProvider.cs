@@ -27,10 +27,10 @@ namespace xyLOGIX.Coinbase.CDP.Keys.Providers
         static CDPPrivateKeyProvider() { }
 
         /// <summary>
-        /// Empty, protected constructor to prohibit direct allocation of this class.
+        /// Empty, private constructor to prohibit direct allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected CDPPrivateKeyProvider() { }
+        private CDPPrivateKeyProvider() { }
 
         /// <summary>
         /// Gets or sets a reference to the instance of an object implementing the
