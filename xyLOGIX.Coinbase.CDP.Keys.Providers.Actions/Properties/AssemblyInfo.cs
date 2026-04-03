@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Coinbase.CDP.Keys.Providers.Actions")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2019-24 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2019-26 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
         "This software is a component of xyLOGIX Multi-Project Template Wizard 2022.  Multi-Project Template Wizard 2022 is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
