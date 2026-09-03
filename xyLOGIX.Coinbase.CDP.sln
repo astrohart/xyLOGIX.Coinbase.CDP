@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Coinbase.CDP.Tokens
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C6F31F0-6946-48D2-B256-F1EF849BC396}"
 	ProjectSection(SolutionItems) = preProject
-		2 Sep 2026 Robust Visual Studio Package Manager Console Automation Script Guidelines Rev D.md = 2 Sep 2026 Robust Visual Studio Package Manager Console Automation Script Guidelines Rev D.md
+		3 Sep 2026 Robust Visual Studio Package Manager Console Automation Script Guidelines Rev E.md = 3 Sep 2026 Robust Visual Studio Package Manager Console Automation Script Guidelines Rev E.md
 		2 Sep 2026 Strip Line Breaks from Comments Configuration Spec Rev B.md = 2 Sep 2026 Strip Line Breaks from Comments Configuration Spec Rev B.md
 		README.md = README.md
 	EndProjectSection
